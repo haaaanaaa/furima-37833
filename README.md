@@ -28,7 +28,7 @@
 | postage_type_id        | integer    | null: false                    |
 | prefecture_id          | integer    | null: false                    |
 | preparation_day_id     | integer    | null: false                    |
-| value                  | integer    | null: false                    |
+| price                  | integer    | null: false                    |
 | user                   | references | null: false, foreign_key: true | 
 
 
@@ -37,12 +37,12 @@
 - belongs_to :user
 - has_one :item_purchase
 - has_many :comments
-- belongs_to_active_hash :category_id
-- belongs_to_active_hash :condition_id
-- belongs_to_active_hash :postage_type_id
-- belongs_to_active_hash :prefecture_id
-- belongs_to_active_hash :preparation_day_id
-- belongs_to :seller, class_name: "User"
+- belongs_to_active_hash :category
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :postage_type
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :preparation_day
+
 
 
 ## item_purchases テーブル
@@ -85,6 +85,6 @@
 
 ### Association
 
-- has_one_active_hash :prefecture_id
+- has_one_active_hash :prefecture
 - belongs_to :item_purchase
 
