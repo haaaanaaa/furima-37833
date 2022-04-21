@@ -1,16 +1,16 @@
 # テーブル設計
 
 ## users テーブル
-| Column               | Type   | Options     |
-| -----------          | ------ | ----------- |
-| nickname             | string | null: false |
-| email                | string | null: false |
-| encrypted_password   | string | null: false |
-| first_name           | string | null: false |
-| family_name          | string | null: false |
-| read_first           | string | null: false |
-| read_family          | string | null: false |
-| birth                | date   | null: false |
+| Column               | Type   | Options                  |
+| -----------          | ------ | -----------              |
+| nickname             | string | null: false              |
+| email                | string | null: false, unique: true|
+| encrypted_password   | string | null: false              |
+| first_name           | string | null: false              |
+| family_name          | string | null: false              |
+| read_first           | string | null: false              |
+| read_family          | string | null: false              |
+| birth                | date   | null: false              |
 
 ### Association
 
@@ -28,7 +28,7 @@
 | postage_type_id        | integer    | null: false                    |
 | prefecture_id          | integer    | null: false                    |
 | preparation_day_id     | integer    | null: false                    |
-| value                  | integar    | null: false                    |
+| value                  | integer    | null: false                    |
 | user                   | references | null: false, foreign_key: true | 
 
 
@@ -46,17 +46,17 @@
 
 
 ## item_purchases テーブル
-| Column        | Type       | Options                        |
-| ------------- | -------    | ------------------------------ |
-| product       | integer    | null: false, foreign_key: true |
-| user          | references | null: false, foreign_key: true |
+| Column        | Type          | Options                        |
+| ------------- | -------       | ------------------------------ |
+| product       | references    | null: false, foreign_key: true |
+| user          | references    | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
 - belongs_to :product
-- has_many :purchase_info
+- has_one :purchase_info
 
 
 ## comments テーブル
