@@ -19,7 +19,7 @@
                 <mxCell id="10" value="productsテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="20" y="210" width="160" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value=" name                  &#10; explanation           &#10; category_id         &#10; condition_id      &#10; postage_type_id      &#10; prefecture_id    &#10; preparation_day_id    &#10; value        &#10; user    " style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="10">
+                <mxCell id="11" value=" name                  &#10; explanation           &#10; category_id         &#10; condition_id      &#10; postage_type_id      &#10; prefecture_id    &#10; preparation_day_id    &#10; price       &#10; user    " style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="10">
                     <mxGeometry y="30" width="160" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="usersテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
