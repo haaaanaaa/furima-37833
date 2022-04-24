@@ -36,6 +36,7 @@ group :development, :test do
   gem 'faker'
   gem 'faker-japanese'
   gem 'gimei'
+  
 end
 
 group :development do
