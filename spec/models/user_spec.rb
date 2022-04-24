@@ -7,9 +7,12 @@ RSpec.describe User, type: :model do
     end
 
     # ユーザー情報
+    context '新規登録できるとき' do
     it '全て正しく入力されれば登録できること' do
       expect(@user).to be_valid
     end
+  end
+    context '新規登録できないとき' do
 
     it 'nicknameがないと登録できない' do
       @user.nickname = nil
@@ -50,7 +53,7 @@ RSpec.describe User, type: :model do
     end
 
     it "passwordが半角英数字混合でなければ登録できない" do
-      @user.password = "00000"
+      @user.password = "０００"
       @user.valid?
       expect(@user.errors.full_messages).to include( "Password Include both letters and numbers")
     end
@@ -148,6 +151,7 @@ RSpec.describe User, type: :model do
       @user.birthday = nil
       @user.valid?
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
+    end
     end
   end
 end
