@@ -25,7 +25,7 @@
 | image                  | string     | null: false                    |
 | explanation            | text       | null: false                    |
 | category_id            | integer    | null: false                    |
-| delivery_fee_id        | integer    | null: false                    |
+| derively_fee_id        | integer    | null: false                    |
 | status_id              | integer    | null: false                    |
 | prefecture_id          | integer    | null: false                    |
 | shipping_day_id        | integer    | null: false                    |
