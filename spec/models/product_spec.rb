@@ -4,7 +4,7 @@ RSpec.describe Product, type: :model do
   describe '#create' do
     before do
       @product = FactoryBot.build(:product)
-      @product.image = fixture_file_upload('public/images/test_image.png')
+     
     end
 
     # 出品情報について
@@ -92,7 +92,13 @@ RSpec.describe Product, type: :model do
       @product.valid?
       expect(@product.errors.full_messages).to include('Price Out of setting range')
     end
+
+      it 'ユーザーが紐付いていないと登録できない' do
+        @product.user = nil
+        @product.valid?
+        expect(@product.errors.full_messages).to include('User must exist')
+      end
+    end
   end
   
   end
-end

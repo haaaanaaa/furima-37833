@@ -20,6 +20,7 @@ class Product < ApplicationRecord
     validates :prefecture_id
     validates :shipping_day_id
     validates :price
+    
   end
 
   with_options numericality: { other_than: 0, message: 'select' } do
@@ -34,6 +35,6 @@ class Product < ApplicationRecord
   
   validates :price, numericality: { with: /\A[0-9]+\z/, message: 'Half-width number' }
   validates :price,
-            numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
+            numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
   
 end
