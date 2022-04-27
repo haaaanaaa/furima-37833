@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   has_one_attached :image
 
   belongs_to :user
-  # has_one    :purchase
+  has_one :purchase
 
   with_options presence: true do
     validates :image
@@ -20,7 +20,6 @@ class Product < ApplicationRecord
     validates :prefecture_id
     validates :shipping_day_id
     validates :price
-    
   end
 
   with_options numericality: { other_than: 0, message: 'select' } do
@@ -31,11 +30,7 @@ class Product < ApplicationRecord
     validates :status_id
   end
 
-  
-  
- 
- 
-  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
-  
-                  
+  validates :price,
+            numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999,
+                            message: 'Out of setting range' }
 end

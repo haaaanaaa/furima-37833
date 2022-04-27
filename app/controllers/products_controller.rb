@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
   before_action :require_login, only: :new, alert: 'You need to sign in or sign up before continuing.'
+  before_action :set_product, only: show
 
   def index
-    # @products = Product.all.order('created_at DESC')
+    @products = Product.all.order('created_at DESC')
   end
 
   def new
@@ -18,6 +19,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def require_login
@@ -27,5 +31,9 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:image, :name, :explanation, :category_id, :derively_fee_id, :status_id, :prefecture_id,
                                     :shipping_day_id, :price).merge(user_id: current_user.id)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end

@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :product do
-    
     name { Faker::Commerce.product_name }
     explanation { Faker::Lorem.characters(16) }
     category_id { Faker::Number.within(range: 1..10) }
@@ -9,7 +8,7 @@ FactoryBot.define do
     prefecture_id { Faker::Number.within(range: 1..47) }
     shipping_day_id { Faker::Number.within(range: 1..3) }
     price { Faker::Number.within(range: 300..9_999_999) }
-  
+
     association :user
 
     after(:build) do |product|
