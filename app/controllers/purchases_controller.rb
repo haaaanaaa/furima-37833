@@ -6,5 +6,4 @@ class PurchasesController < ApplicationController
       # @purchase = PurchaseAddress.new
     # end
   # end
-
 end
